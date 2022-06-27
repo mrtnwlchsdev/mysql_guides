@@ -9,10 +9,10 @@ MySQL usa un formato de tablas para el almacenamiento de datos, siendo estas tab
 
 ## Tablas y tipos de datos
 
-    | id | first_name | last_name | email | password | 
-    | -- | ---------- | --------- | ----- | -------- |
-    | 1 | John | Doe | John@gmail.com | hasdj32423k |
-    | 2 | Sara | Watson | sara@gmail.com | dha342h23 |
+   | id | first_name | last_name | email | password | 
+   | -- | ---------- | --------- | ----- | -------- |
+   | 1 | John | Doe | John@fakemail.com | hasdj32423k |
+   | 2 | Sara | Watson | sara@fakemail.com | dha342h23 |
 
     - 1 / 2 :: filas
     - first_name / last_name :: columnas
