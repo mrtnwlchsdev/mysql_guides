@@ -68,7 +68,7 @@ XAMPP es una suite de software en la cual se incluyen varias herramientas de des
 
     $ mysql --version
 
-## Comandos iniciales
+## Iniciar MySQL desde la linea de comandos
 
 Iniciar sesion en MySQL desde la terminal
 
@@ -204,3 +204,19 @@ Obtener cada valor unico registrado en una columna
 Seleccionar los campos de una columna que se encuentren en un rango especifico
 
     SELECT * FROM <table_name> WHERE <column> BETWEEN low_num AND high_num;
+
+## Consulta LIKE
+
+Seleccionar campos mediante una consulta parcial de datos
+
+    SELECT * FROM <table_name> WHERE <column> LIKE 'd%';
+
+En el ejemplo anterior se realizara la consulta de todos los campos de la columna especificada que empiecen con el caracter d.
+
+    SELECT * FROM <table_name> WHERE <column> LIKE 'dev%';
+
+## Consulta IN
+
+Permite seleccionar campos especificos de una columna 
+
+    SELECT * FROM <table_name> WHERE <table_name> IN (camp1,camp2);
