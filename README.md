@@ -1,6 +1,6 @@
 # MySQL
 
-- Base de datos relacional de codigo abierto.
+- Gestor de bases de datos relacionales.
 - Uso de SQL para realizar consultas (Creacion de tablas, modificar campos en una tabla, etc).
 - Usada con multiples lenguajes de programacion (PHP, Node, Python, etc.)
 - Multiplataforma.
