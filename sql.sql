@@ -1,6 +1,6 @@
 -- Comentarios SQL
 
--- SQL no distinque entre mayusculas y minusculas en sus palabras claves
+-- SQL no distinque entre mayusculas y minusculas en sus comandos claves
 -- Aunque la convencion es escribir los comandos de consulta SQL en mayuscula
 
 -- ***
@@ -94,5 +94,44 @@ DELETE FROM users WHERE id = 1;
 -- Borrar todos los registros de una tabla
 DELETE * FROM users;
 
+-- Modificar el nombre de una tabla
+RENAME TABLE users TO user;
+
 -- Eliminar una tabla de la base de datos en uso
 DROP TABLE users;
+
+-- ***
+-- FOREIGN KEY
+-- ***
+-- Clave que permite conectar una tabla con otra que contenga una PRIMARY KEY especificada.
+
+CREATE TABLE product(
+    id INT AUTO_INCREMENT NOT NULL,
+    created_by INT NOT NULL,
+    brand VARCHAR(100) NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(created_by) references user(id)
+);
+
+-- Se especifica que la llave foranea de la tabla product sera la columna created_by
+-- Se especifica mediante la sentencia references que la llave primaria de la tabla user vinculada es la columna id
+
+-- LEFT JOIN
+-- La consulta realizada entre 2 tablas retornara los productos consultados de la primera tabla (izquierda), y a su vez los productos asociados que se especifiquen en la consulta de la segunda tabla (derecha).
+
+INSERT INTO product (created_by,brannd)
+    VALUES (1,'imac'),
+    (2,'iwatch'),
+    (1, 'iphone');
+
+SELECT u.id, u.name FROM user as u LEFT JOIN product as p ON u.id = p.created_by;
+
+-- Se asigna un alias a la tabla user (u)
+-- Se especifica mediante el alias las columnas a consultar de la tabla user (u.id, u.name)
+-- Se unen las tablas a consultar mediante la declaracion LEFT JOIN y se asigna el respectivo alias a la segunda tabla (p)
+-- Se realiza la consulta SQL mediante la sentencia ON, posteriormente se indican las columnas de las 2 tablas que se van a relacionar (PRIMARY KEY, FOREIGN KEY)
+
+-- RIGHT JOIN
+-- La consulta realizada entre 2 tablas retornara los productos consultados de la segunda tabla (derecha), y a su vez los productos asociados que se especifiquen en la consulta de la primera tabla (izquierda).
+
+SELECT u.name, p.brand FROM user as u RIGHT JOIN product as p ON u.id = p.created_by;
