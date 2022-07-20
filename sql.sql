@@ -26,7 +26,7 @@ USE db_name;
 
 -- Crear una tabla a partir de la base de datos en uso
 CREATE TABLE users (
-	id INT auto_increment,
+    id INT auto_increment,
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     password VARCHAR(255),
